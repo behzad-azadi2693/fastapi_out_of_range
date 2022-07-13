@@ -37,10 +37,12 @@ async def save_csv_to_mongo(coll_name, my_file):
     
     create_list = []
     
+    length = len(list(convert_datas[0].keys())[0].split(';'))
+
     for data in convert_datas:
         dictionary = {}
 
-        for i in range(len(list(convert_datas[0].keys())[0].split(';'))):
+        for i in range(length):
             dictionary[f"{list(convert_datas[0].keys())[0].split(';')[i]}"] = f"{list(convert_datas[0].values())[0].split(';')[i]}"
             #print(f"{list(convert_datas[0].keys())[0].split(';')[i]}")
             #print(f"{list(convert_datas[0].values())[0].split(';')[i]}")
