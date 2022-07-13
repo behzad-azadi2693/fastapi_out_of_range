@@ -32,7 +32,7 @@ class CsvFile(BaseModel):
 
 async def save_csv_to_mongo(coll_name, my_file):
     collection = db[coll_name]
-    datas = pd.read_csv(my_file.file, delimeter=";)
+    datas = pd.read_csv(my_file.file, delimeter=";")
     convert_datas = datas.to_dict(orient="records")
     '''
     create_list = []
